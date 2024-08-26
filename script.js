@@ -1,11 +1,11 @@
 // script.js (Client-side Fetch)
 
-// Replace with your actual Worker URL
-const WORKER_URL = "https://credential-store.biomedical.workers.dev";
+// Replace with your actual Pages URL
+const PAGES_URL = "https://your-project-name.pages.dev";
 
 async function storeCredential(key, value) {
     try {
-        const response = await fetch(`${WORKER_URL}/api/store`, { // Send request to Worker
+        const response = await fetch(`${PAGES_URL}/api/store`, { // Send request to Worker
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
