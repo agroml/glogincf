@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Google</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sign-in-box">
+            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+                alt="Google logo" class="logo">
+            <h1>Welcome</h1>
+            <div class="email-dropdown">
+                <span id="user-email"></span>
+                <span class="dropdown-arrow">▼</span>
+            </div>
+            <form id="password-form">
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="show-password">
+                    <label for="show-password">Show password</label>
+                </div>
+                <div class="button-group">
+                    <a href="#" class="forgot-link">Forgot password?</a>
+                    <button type="submit" class="next-button">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <select>
+                <option value="en-US">English (United States)</option>
+            </select>
+            <div class="footer-links">
+                <a href="#">Help</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Get email from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const userEmail = urlParams.get('email');
+        document.getElementById('user-email').textContent = userEmail;
+
+        // Show Password functionality
+        const passwordInput = document.getElementById('password');
+        const showPasswordCheckbox = document.getElementById('show-password');
+
+        showPasswordCheckbox.addEventListener('change', function() {
+            passwordInput.type = this.checked ? 'text' : 'password';
+        });
+    </script>
+</body>
+
+</html>
