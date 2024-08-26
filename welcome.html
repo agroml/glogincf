@@ -44,20 +44,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        // Get email from URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const userEmail = urlParams.get('email');
-        document.getElementById('user-email').textContent = userEmail;
-
-        // Show Password functionality
-        const passwordInput = document.getElementById('password');
-        const showPasswordCheckbox = document.getElementById('show-password');
-
-        showPasswordCheckbox.addEventListener('change', function() {
-            passwordInput.type = this.checked ? 'text' : 'password';
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>

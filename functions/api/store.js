@@ -23,6 +23,7 @@ export async function onRequestPost(context) {
 }
 
 export async function onRequestOptions() {
+    console.log('onRequestOptions function called');
     return new Response(null, {
         headers: {
             "Access-Control-Allow-Origin": "*",
