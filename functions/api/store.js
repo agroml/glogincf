@@ -2,17 +2,12 @@ export async function onRequestPost(context) {
     try {
         const { key, value } = await context.request.json();
         await context.env.USER_CREDENTIALS.put(key, value);
-        return new Response('Credential stored successfully!', {
-            status: 200,
-            headers: {
-                "Access-Control-Allow-Origin": "*",
-            }
-        });
+        return new Response('', { status: 200 });
     } catch (error) {
-        return new Response(JSON.stringify({ error: 'An error occurred while storing the credential.', details: error.message }), {
+        return new Response(JSON.stringify({ error: 'An error occurred while storing the credential.' }), {
             status: 500,
             headers: {
-                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json"
             }
         });
     }

