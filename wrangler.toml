@@ -1,4 +1,3 @@
-name = "credential-store"
 compatibility_date = "2023-05-18"
 
 kv_namespaces = [

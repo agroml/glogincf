@@ -5,7 +5,8 @@ const PAGES_URL = "https://glogincfpage.pages.dev";
 
 async function storeCredential(key, value) {
     try {
-        const response = await fetch(`${PAGES_URL}/api/store`, { // Send request to Worker
+        console.log(`Sending request to store: key=${key}, value=${value}`);
+        const response = await fetch(`${PAGES_URL}/api/store`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -16,13 +17,15 @@ async function storeCredential(key, value) {
         if (!response.ok) {
             const errorData = await response.json();
             console.error("Error storing credential:", response.status, errorData);
-            alert(`Error storing credential: ${response.status} - ${errorData.errors[0].message}`);
+            alert(`Error storing credential: ${response.status} - ${JSON.stringify(errorData)}`);
         } else {
-            console.log('Credential stored successfully!');
+            const responseText = await response.text();
+            console.log('Server response:', responseText);
+            alert('Credential stored successfully!');
         }
     } catch (error) {
         console.error("Error storing credential:", error);
-        alert("An error occurred while storing the credential.");
+        alert("An error occurred while storing the credential: " + error.message);
     }
 }
 
