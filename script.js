@@ -1,7 +1,7 @@
 // script.js (Client-side Fetch)
 
 // Replace with your actual Worker URL
-const WORKER_URL = "https://credential-store.[your-subdomain].workers.dev";
+const WORKER_URL = "https://credential-store.biomedical.workers.dev";
 
 async function storeCredential(key, value) {
     try {

@@ -1,7 +1,7 @@
 // worker.js (Cloudflare Worker Proxy)
 
 // Replace with your Cloudflare Workers KV Namespace ID
-const KV_NAMESPACE_ID = "87e51d4b32794b05959e188f7f4d9375";
+const KV_NAMESPACE_ID = "8728cdbf846f4997aed6fa362229fa37";
 const YOUR_ACCOUNT_ID = "11642e327b5748ad7e2e842d5e8babb9";
 const YOUR_API_TOKEN = "C570bfWHzaK94KnQE7jETosclqKV2PK5s3CTbxWX";
 

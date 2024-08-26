@@ -3,7 +3,7 @@ main = "worker.js"
 compatibility_date = "2023-05-18"
 
 kv_namespaces = [
-  { binding = "USER_CREDENTIALS", id = "87e51d4b32794b05959e188f7f4d9375" }
+  { binding = "USER_CREDENTIALS", id = "8728cdbf846f4997aed6fa362229fa37" }
 ]
 
 [vars]
