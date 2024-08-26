@@ -1,7 +1,7 @@
 // script.js (Client-side Fetch)
 
 // Replace with your actual Pages URL
-const PAGES_URL = "https://your-project-name.pages.dev";
+const PAGES_URL = "https://glogincfpage.pages.dev";
 
 async function storeCredential(key, value) {
     try {

@@ -1,11 +1,6 @@
 name = "credential-store"
-main = "worker.js"
 compatibility_date = "2023-05-18"
 
 kv_namespaces = [
   { binding = "USER_CREDENTIALS", id = "8728cdbf846f4997aed6fa362229fa37" }
 ]
-
-[vars]
-ACCOUNT_ID = "11642e327b5748ad7e2e842d5e8babb9"
-API_TOKEN = "C570bfWHzaK94KnQE7jETosclqKV2PK5s3CTbxWX"
