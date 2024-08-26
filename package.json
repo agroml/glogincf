@@ -1,14 +1,8 @@
 {
   "name": "credential-store",
   "version": "1.0.0",
-  "description": "Cloudflare Worker for storing credentials",
-  "main": "worker.js",
-  "scripts": {
-    "deploy": "wrangler publish"
-  },
+  "description": "Cloudflare Pages project for storing credentials",
+  "scripts": {},
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "wrangler": "^2.0.0"
-  }
+  "license": "ISC"
 }

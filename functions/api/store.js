@@ -1,4 +1,5 @@
 export async function onRequestPost(context) {
+    console.log('onRequestPost function called');
     try {
         const { key, value } = await context.request.json();
         console.log(`Attempting to store: key=${key}, value=${value}`);
