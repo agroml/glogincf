@@ -16,13 +16,15 @@ body {
 
 .sign-in-box {
     background-color: white;
-    padding: 48px 40px 36px;
+    padding: 48px 20px 36px;
     border: 1px solid #dadce0;
     border-radius: 8px;
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -61,8 +63,7 @@ form {
 
 input[type="password"],
 input[type="text"] {
-    width: 450px;
-    /* Adjust the width as needed */
+    width: 100%;
     padding: 13px 15px;
     margin-bottom: 8px;
     border: 1px solid #dadce0;
@@ -124,6 +125,7 @@ footer {
 
 .footer-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     max-width: 450px;
@@ -131,11 +133,18 @@ footer {
     padding: 0 20px;
 }
 
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
 .footer-links a {
     color: #757575;
     font-size: 12px;
     text-decoration: none;
     margin-left: 24px;
+    margin-bottom: 5px;
 }
 
 select {
@@ -150,4 +159,50 @@ select {
 
 select:focus {
     outline: none;
+}
+
+@media (max-width: 480px) {
+    .sign-in-box {
+        padding: 24px 16px 18px;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .email-dropdown {
+        font-size: 14px;
+    }
+
+    input[type="password"],
+    input[type="text"] {
+        font-size: 14px;
+    }
+
+    .checkbox-group label {
+        font-size: 12px;
+    }
+
+    .forgot-link,
+    .next-button {
+        font-size: 12px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-links {
+        margin-top: 10px;
+    }
+
+    .footer-links a {
+        margin-left: 0;
+        margin-right: 24px;
+    }
 }
